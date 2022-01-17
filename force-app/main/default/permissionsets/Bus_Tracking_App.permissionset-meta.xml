@@ -193,4 +193,8 @@
         <tab>Maintenance__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
+    <tabSettings>
+        <tab>Vehicle_Display</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
 </PermissionSet>
