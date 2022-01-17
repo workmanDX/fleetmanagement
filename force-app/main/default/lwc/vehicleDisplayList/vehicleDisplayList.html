@@ -1,0 +1,35 @@
+<template>
+    <div class="slds-card slds-var-p-around_x-small">
+        <template if:true={vehicles.data}>
+            <template if:true={vehicles.data.records.length}>
+                <div class="content">
+                    <template
+                        for:each={vehicles.data.records}
+                        for:item="vehicle"
+                    >
+                        <c-vehicle-tile
+                            key={vehicles.Id}
+                            vehicle={vehicle}
+                            vehicle-type={vehicleType}
+                            draggable={tilesAreDraggable}
+                            onselected={handlevehicleselected}
+                            class="slds-var-m-around_x-small"
+                        >
+                        </c-vehicle-tile>
+                        {vehicle.Bus_Id__c}
+                    </template>
+                </div>
+                <c-paginator
+                    page-number={pageNumber}
+                    page-size={vehicles.data.pageSize}
+                    total-item-count={vehicles.data.totalItemCount}
+                    onprevious={handlePreviousPage}
+                    onnext={handleNextPage}
+                ></c-paginator>
+            </template>
+        </template>
+        <template if:true={vehicles.error}>
+            <c-error-panel errors={vehicles.error}></c-error-panel>
+        </template>
+    </div>
+</template>

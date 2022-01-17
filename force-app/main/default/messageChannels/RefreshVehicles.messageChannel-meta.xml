@@ -1,0 +1,8 @@
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>RefreshVehicles</masterLabel>
+    <description>This event is fired when a vehicle is updated.</description>
+    <lightningMessageFields>
+        <fieldName>vehicleId</fieldName>
+        <description>Updated vehicle Id.</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

@@ -1,0 +1,18 @@
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>VehicleSelected</masterLabel>
+    <description>This event is fired when a vehicle is selected.</description>
+    <lightningMessageFields>
+        <fieldName>vehicleId</fieldName>
+        <description>Selected vehicle Id.</description>
+    </lightningMessageFields>
+
+    <lightningMessageFields>
+        <fieldName>objectAPI</fieldName>
+        <description>Selected vehicle object api name.</description>
+    </lightningMessageFields>
+
+    <lightningMessageFields>
+        <fieldName>recordType</fieldName>
+        <description>Selected vehicle record type name.</description>
+    </lightningMessageFields>
+</LightningMessageChannel>
