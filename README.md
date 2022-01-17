@@ -1,18 +1,46 @@
-# Salesforce DX Project: Next Steps
+# Sitetracker : Fleet Management
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+## Installing Fleet Management using a Developer Edition Org or a Trailhead Playground
 
-## How Do You Plan to Deploy Your Changes?
+Make sure to start from a brand-new environment to avoid conflicts with previous work you may have done.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+1. Clone this repository:
 
-## Configure Your Salesforce DX Project
+    ```
+    git clone https://github.com/workmanDX/sitetracker.git
+    cd sitetracker
+    ```
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+1. Authorize your Trailhead Playground or Developer org and provide it with an alias (**mydevorg** in the command below):
 
-## Read All About It
+    ```
+    sfdx auth:web:login -s -a mydevorg
+    ```
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+1. Deploy the App with these steps:
+
+    1. Run this command in a terminal to deploy the app.
+
+        ```
+        sfdx force:source:deploy -p force-app
+        ```
+
+    1. Assign the **Fleet_Management** permission set to the default user.
+
+        ```
+        sfdx force:user:permset:assign -n Fleet_Management
+        ```
+
+    1. Import some sample data.
+
+        ```
+        sfdx force:data:tree:import -p ./data/sample-data-plan.json
+        ```
+
+    1. If your org isn't already open, open it now:
+
+        ```
+        sfdx force:org:open -u mydevorg
+        ```
+
+    1. In App Launcher, select the **Fleet Management** app.
