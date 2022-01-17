@@ -2,10 +2,10 @@ public with sharing class MaintenanceSchedulerHandler {
     public static String prepQueryString(){
         String query = null;
         QueryInfo info = getQueryInfo();
-        if(!info.countList.isEmpty() && info.lowestInterval != 0){
+        if(info.lowestInterval != 0){
             query = 'SELECT Id, Location__c, Miles_Since_Last_Maintenance__c, Maximum_Capacity__c, Garage__c, ' +
             '(SELECT Id, Schedule_Time__c, Recorded_Odometer__c FROM Maintenance__r ORDER BY Schedule_Time__c LIMIT 1) ' +
-            'FROM Bus__c WHERE Current_Status__c = \'Ready for Use\' AND Maximum_Capacity__c IN ' + info.countList + ' AND (Miles_Since_Last_Maintenance__c > ' + info.lowestInterval +  
+            'FROM Bus__c WHERE Current_Status__c = \'Ready for Use\' AND (Miles_Since_Last_Maintenance__c > ' + info.lowestInterval +  
             ' OR Miles_Since_Last_Maintenance__c < 0)';
         }
         return query;
@@ -13,14 +13,14 @@ public with sharing class MaintenanceSchedulerHandler {
 
     public static QueryInfo getQueryInfo() {
         QueryInfo info = new QueryInfo();
-        info.countList = new String[0];
+        // info.countList = new String[0];
         info.lowestInterval = 0;
         for(Bus_Maintenance_Configuration__mdt config : [
             SELECT Passenger_Capacity__c, Maintenance_Interval__c 
             FROM  Bus_Maintenance_Configuration__mdt
             WHERE Active__c = TRUE
         ]){
-            info.countList.add('\'' + config.Passenger_Capacity__c + '\'');
+            // info.countList.add('\'' + config.Passenger_Capacity__c + '\'');
 
             if(info.lowestInterval == 0 || config.Maintenance_Interval__c < info.lowestInterval){
                 info.lowestInterval = config.Maintenance_Interval__c;
@@ -48,7 +48,7 @@ public with sharing class MaintenanceSchedulerHandler {
                 if(info.bus.Garage__c != null){
                     garageId = info.bus.Garage__c;
                 } else {
-                    //add an email/chatter post that there is an issue
+                    //add an email/chatter post for when there is an issue
                     continue;
                 }
             } else {
@@ -89,15 +89,24 @@ public with sharing class MaintenanceSchedulerHandler {
 
     private static BusMaintenanceInfo[] checkBussesForInterval(Bus__c[] busList){
         Map<String, Bus_Maintenance_Configuration__mdt> configMap = getConfigMap();
+        Bus_Maintenance_Configuration__mdt defaultConfig = configMap.containsKey('Default') ? configMap.get('Default') : null;
         BusMaintenanceInfo[] bussesForMaintenance = new BusMaintenanceInfo[0];
         for(Bus__c bus : busList){
-            //skip this bus if there isn't a matching config
-            if(!configMap.containsKey(bus.Maximum_Capacity__c)) continue;
+            Bus_Maintenance_Configuration__mdt matchingConfig = new Bus_Maintenance_Configuration__mdt();
+            if(bus.Maximum_Capacity__c != null && configMap.containsKey(bus.Maximum_Capacity__c)){
+                matchingConfig = configMap.get(bus.Maximum_Capacity__c);
+            }
+            else if(defaultConfig != null){
+                matchingConfig = defaultConfig;
+            }
+            else {
+                //skip this bus if there isn't a matching config
+                continue;
+            }
             BusMaintenanceInfo info = new BusMaintenanceInfo();
-            Bus_Maintenance_Configuration__mdt config = configMap.get(bus.Maximum_Capacity__c);
-            if(bus.Miles_Since_Last_Maintenance__c > config.Maintenance_Interval__c){
+            if(bus.Miles_Since_Last_Maintenance__c > matchingConfig.Maintenance_Interval__c || bus.Miles_Since_Last_Maintenance__c < 0){
                 info.bus = bus;
-                info.config = config;
+                info.config = matchingConfig;
                 bussesForMaintenance.add(info);
             }
         }
