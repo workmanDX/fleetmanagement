@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Photo__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Photo_URL__c != null,
+IMAGE(Photo_URL__c,&quot;Photo Unavailable&quot;,150,200),
+				&quot;Photo Unavailable&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Photo</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

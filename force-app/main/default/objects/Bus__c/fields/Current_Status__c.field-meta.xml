@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Current Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Scheduled for Maintenance</fullName>
+                <default>false</default>
+                <label>Scheduled for Maintenance</label>
+            </value>
+            <value>
+                <fullName>Undergoing Repairs</fullName>
+                <default>false</default>
+                <label>Undergoing Repairs</label>
+            </value>
+            <value>
+                <fullName>Ready for Use</fullName>
+                <default>false</default>
+                <label>Ready for Use</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+                <label>Inactive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

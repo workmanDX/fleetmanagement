@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Default Values</label>
+    <protected>false</protected>
+    <values>
+        <field>AC_Bonus__c</field>
+        <value xsi:type="xsd:double">3.0</value>
+    </values>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Historic_Bonus__c</field>
+        <value xsi:type="xsd:double">34.0</value>
+    </values>
+    <values>
+        <field>Historic_Year__c</field>
+        <value xsi:type="xsd:string">1972</value>
+    </values>
+    <values>
+        <field>Milage_Floor__c</field>
+        <value xsi:type="xsd:double">100000.0</value>
+    </values>
+    <values>
+        <field>Passenger_Capacity__c</field>
+        <value xsi:type="xsd:string">Default</value>
+    </values>
+    <values>
+        <field>Starting_Value__c</field>
+        <value xsi:type="xsd:double">110000.0</value>
+    </values>
+    <values>
+        <field>Value_Reduction__c</field>
+        <value xsi:type="xsd:double">0.1</value>
+    </values>
+</CustomMetadata>
