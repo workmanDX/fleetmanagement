@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
-        <application>Bus_Tracking</application>
+        <application>Fleet_Management</application>
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
@@ -32,7 +32,7 @@
         <enabled>true</enabled>
         <name>Bus_Value_Configuration__mdt</name>
     </customMetadataTypeAccesses>
-    <description>This permission set gives access tot he Bus Tracking app and related items</description>
+    <description>This permission set gives access tot he Fleet Management app and related items</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Bus__c.Bus_ID__c</field>
@@ -144,7 +144,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Bus Tracking App</label>
+    <label>Fleet Management</label>
     <license>Salesforce</license>
     <objectPermissions>
         <allowCreate>true</allowCreate>

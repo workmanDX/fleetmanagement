@@ -8,7 +8,7 @@
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
-    <label>Bus Tracking</label>
+    <label>Fleet Management</label>
     <navType>Standard</navType>
     <tabs>Bus__c</tabs>
     <tabs>Vehicle_Display</tabs>
