@@ -1,0 +1,92 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Bus__c",
+                "referenceId": "Bus__cRef1"
+            },
+            "Bus_ID__c": "Magic School Bus",
+            "Current_Status__c": "Ready for Use",
+            "Number_of_Wheels__c": 6,
+            "Odometer_Reading__c": 195324,
+            "Has_AC__c": false,
+            "Maximum_Capacity__c": "24",
+            "Year__c": "1970",
+            "Photo_URL__c": "https://images-na.ssl-images-amazon.com/images/I/91oUl-PUA-L._SX268_.jpg",
+            "Location__latitude__s": 39.16380180427811,
+            "Location__longitude__s": -120.15347866718207,
+            "Garage__c": "@Garage__cRef1"
+        },
+        {
+            "attributes": {
+                "type": "Bus__c",
+                "referenceId": "Bus__cRef2"
+            },
+            "Bus_ID__c": "STCBus01-2015",
+            "Current_Status__c": "Ready for Use",
+            "Number_of_Wheels__c": 6,
+            "Odometer_Reading__c": 76923,
+            "Has_AC__c": true,
+            "Maximum_Capacity__c": "60",
+            "Year__c": "2015",
+            "Photo_URL__c": "https://bostonglobe-prod.cdn.arcpublishing.com/resizer/OrRpmnII8Uhg-fhOYkNWfwZUSPk=/1024x0/cloudfront-us-east-1.images.arcpublishing.com/bostonglobe/RO3UVR6JANF6V2JZRBUCRLIQFM.jpg",
+            "Location__latitude__s": 39.530013250157864,
+            "Location__longitude__s": -119.79051637606044,
+            "Garage__c": "@Garage__cRef1"
+        },
+        {
+            "attributes": {
+                "type": "Bus__c",
+                "referenceId": "Bus__cRef3"
+            },
+            "Bus_ID__c": "STCBus011-2022",
+            "Current_Status__c": "Ready for Use",
+            "Number_of_Wheels__c": 8,
+            "Odometer_Reading__c": 22169,
+            "Odometer_Reading_Last_Maintenance__c": 15327,
+            "Has_AC__c": true,
+            "Maximum_Capacity__c": "60",
+            "Year__c": "2022",
+            "Photo_URL__c": "https://www.mirrorreview.com/wp-content/uploads/2017/11/Singapore-plans-to-add-driverless-buses-on-the-roads-by-2022.jpg",
+            "Location__latitude__s": 39.56857461141285,
+            "Location__longitude__s": -107.50503566243576,
+            "Garage__c": "@Garage__cRef2"
+        },
+        {
+            "attributes": {
+                "type": "Bus__c",
+                "referenceId": "Bus__cRef4"
+            },
+            "Bus_ID__c": "Springfield School-01",
+            "Current_Status__c": "Ready for Use",
+            "Number_of_Wheels__c": 8,
+            "Odometer_Reading__c": 28961,
+            "Odometer_Reading_Last_Maintenance__c": 23500,
+            "Has_AC__c": false,
+            "Maximum_Capacity__c": "12",
+            "Year__c": "1989",
+            "Photo_URL__c": "https://www.imcdb.org/i871128.jpg",
+            "Location__latitude__s": 36.16881072310831,
+            "Location__longitude__s": -115.15308585723052,
+            "Garage__c": "@Garage__cRef2"
+        },
+        {
+            "attributes": {
+                "type": "Bus__c",
+                "referenceId": "Bus__cRef5"
+            },
+            "Bus_ID__c": "STCBus01-1960",
+            "Current_Status__c": "Ready for Use",
+            "Number_of_Wheels__c": 8,
+            "Odometer_Reading__c": 297320,
+            "Odometer_Reading_Last_Maintenance__c": 293952,
+            "Has_AC__c": true,
+            "Maximum_Capacity__c": "36",
+            "Year__c": "1960",
+            "Photo_URL__c": "https://img1.cgtrader.com/items/797738/0e9a14956f/old-bus-3d-model-obj-mtl-fbx-ma-mb-stl.jpg",
+            "Location__latitude__s": 40.96334399862309,
+            "Location__longitude__s": -117.58838823086596,
+            "Garage__c": "@Garage__cRef3"
+        }
+    ]
+}

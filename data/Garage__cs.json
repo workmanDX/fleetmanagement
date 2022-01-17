@@ -1,0 +1,34 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Garage__c",
+                "referenceId": "Garage__cRef1"
+            },
+            "Garage_ID__c": "SaltLake01",
+            "Active__c": true,
+            "Location__latitude__s": 40.74878849993355,
+            "Location__longitude__s": -111.91679269275916
+        },
+        {
+            "attributes": {
+                "type": "Garage__c",
+                "referenceId": "Garage__cRef2"
+            },
+            "Garage_ID__c": "SanFran01",
+            "Active__c": true,
+            "Location__latitude__s": 37.767719687146325,
+            "Location__longitude__s": -122.41338973139547
+        },
+        {
+            "attributes": {
+                "type": "Garage__c",
+                "referenceId": "Garage__cRef3"
+            },
+            "Garage_ID__c": "Denver01",
+            "Active__c": true,
+            "Location__latitude__s": 39.73545978741232,
+            "Location__longitude__s": -105.00538353327595
+        }
+    ]
+}
